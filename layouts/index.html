@@ -9,7 +9,8 @@
   <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   <link href="{{ .Site.BaseURL }}/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{ .Site.BaseURL }}/css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="{{ .Site.BaseURL }}/css/hilight.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,7 +25,7 @@
 		</div>
 	</div>
 	{{ else }}
-		{{ template "theme/partials/header.html" . }}
+        {{ template "theme/partials/header.html" . }}
   <div id="article">
       <h1>{{.Title}}</h1>
   <ul class="posts">
@@ -32,8 +33,6 @@
       <li><span><a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</h4></time></span></span></li>
       {{ end }}
   </ul>
-	{{ template "theme/partials/footer.html" }}	
+	{{ partial "footer.html" . }}	
 	{{ end }}
 
-	</body>
-</html>
